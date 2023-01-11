@@ -7,9 +7,6 @@ const fetchCard = (currentPage) => {
       .then(res => {
         if (res.data.info.pages > currentPage) {
           axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
-            .then(res => {
-              return res
-            })
             .then(response => response.data.results.map((item) => dispatch(addCard({ image: item.image, name: item.name, status: item.status, type: item.type }))))
         }
       })
