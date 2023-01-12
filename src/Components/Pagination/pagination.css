@@ -1,0 +1,156 @@
+.pagination {
+  display: flex;
+  list-style-type: none;
+  column-gap: 15px;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.btn {
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 30px;
+  font-size: 1em;
+  background-color: #FDD42F;
+  transition: all .15s linear;
+}
+
+.btn:hover {
+  scale: 1.1;
+  background-color: #604389;
+  cursor: pointer;
+}
+
+.btn-active {
+  background-color: blue;
+}
+
+.btn-previous, .btn-next {
+  width: 90px;
+}
+
+.btn-break {
+  color: #FDD42F
+}
+
+.disable-component {
+  display: none
+}
+
+/* loader classes */
+.lds-ring {
+  display: inline-block;
+  position: absolute;
+  top: 35vh;
+  left: 45vw;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .pagination {
+    margin: 10px auto;
+  }
+
+  .btn {
+    width: 60px;
+    height: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .btn {
+    width: 40px;
+    height: 20px;
+    font-size: 0.8em;
+  }
+
+  .pagination {
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 650px) {
+  .btn {
+    width: 30px;
+    height: 15px;
+    font-size: 0.8em;
+    margin: 0
+  }
+
+  .pagination {
+    margin: 5px auto;
+  }
+}
+
+@media (max-width: 649px) and (min-width: 425px) {
+  .btn {
+    width: 25px;
+    height: 15px;
+    font-size: 0.8em;
+    margin: 0
+  }
+
+  .pagination {
+    margin: 5px auto;
+    column-gap: 5px;
+  }
+}
+
+@media (max-width: 424px) and (min-width: 320px) {
+  .btn {
+    width: 25px;
+    height: 15px;
+    font-size: 0.8em;
+    margin: 0
+  }
+
+  .pagination {
+    margin: 5px auto;
+    column-gap: 5px;
+  }
+}
+
+@media (max-width: 319px) {
+  .btn {
+    width: 20px;
+    height: 10px;
+    font-size: 0.5em;
+    margin: 0;
+    column-gap: 5px;
+  }
+}
+

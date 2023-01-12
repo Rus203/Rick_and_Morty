@@ -1,0 +1,39 @@
+.list-cards {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .list-cards {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 650px) {
+  .list-cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 649px) and (min-width: 425px) {
+  .list-cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 424px) and (min-width: 320px) {
+  .list-cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 319px) {
+  .list-cards {
+    justify-content: center;
+  }
+}
+
