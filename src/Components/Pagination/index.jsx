@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ListCards from './ListCards'
+import Loader from '../Loader'
 import ReactPaginate from 'react-paginate'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -41,13 +42,7 @@ const Pagination = () => {
   return (
   <>
   { loading
-    ? (
-      <div className="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>)
+    ? <Loader />
     : <ListCards pages={currentPages} />
     }
     <ReactPaginate

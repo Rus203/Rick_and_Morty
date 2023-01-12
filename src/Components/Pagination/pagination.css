@@ -45,8 +45,8 @@
 .lds-ring {
   display: inline-block;
   position: absolute;
-  top: 35vh;
-  left: 45vw;
+  top: 50vh;
+  left: 50vw;
   width: 80px;
   height: 80px;
 }
