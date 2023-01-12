@@ -1,6 +1,6 @@
 {
-  "home": "http://Rus203.github.io/Rick_and_Morty-s",
-  "name": "rick_and_morty_slider",
+  "homepage": "http://Rus203.github.io/Rick_and_Morty",
+  "name": "rick_and_morty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
