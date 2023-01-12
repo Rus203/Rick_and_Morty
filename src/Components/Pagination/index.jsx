@@ -35,7 +35,7 @@ const Pagination = () => {
       setTimeout(() => axios.get(
         `https://rickandmortyapi.com/api/character/?page=${pageNum}`)
         .then(res => dispatch(addPage({ [pageNum]: res.data.results })))
-        .then(() => setLoading(false)), 500)
+        .then(() => setLoading(false)), 300)
     }
   }
 

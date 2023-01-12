@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 10px;
-  column-gap: 15px;
+  gap: 10px;
   margin-left: 20px;
   margin-right: 20px;
 }
