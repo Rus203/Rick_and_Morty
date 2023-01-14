@@ -6,3 +6,10 @@ export const addPage = payload => {
     payload
   }
 }
+
+export const setPage = pageNum => {
+  return {
+    type: C.SET_PAGE,
+    pageNum
+  }
+}

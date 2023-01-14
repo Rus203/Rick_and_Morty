@@ -3,5 +3,11 @@ export const INFO = {
 }
 
 export const PAGES = {
-  ADD_PAGE: 'ADD_PAGE'
+  ADD_PAGE: 'ADD_PAGE',
+  SET_PAGE: 'SET_PAGE'
+}
+
+export const LOADER = {
+  SHOW_LOADER: 'SHOW_LOADER',
+  HIDE_LOADER: 'HIDE_LOADER'
 }

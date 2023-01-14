@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import ListCards from './ListCards'
 import Loader from '../Loader'
 import ReactPaginate from 'react-paginate'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addPage } from '../../redux/actions/pages'
-import { addInfo } from '../../redux/actions/info'
+import { setPage } from '../../redux/actions/pages'
 
 import './pagination.css'
 
@@ -17,31 +15,22 @@ const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const currentPages = useSelector(state => state.page[currentPage])
   const pages = useSelector(state => state.page)
-
-  const [loading, setLoading] = useState(true)
+  const loader = useSelector(state => state.loader)
 
   useEffect(() => {
-    axios.get('https://rickandmortyapi.com/api/character/')
-      .then(response => {
-        dispatch(addInfo(response.data.info))
-      })
-      .then(() => chosenPage())
+    chosenPage()
   }, [])
 
   const chosenPage = (pageNum = 1) => {
     setCurrentPage(pageNum)
     if (!Object.keys(pages).includes(pageNum.toString())) {
-      setLoading(true)
-      setTimeout(() => axios.get(
-        `https://rickandmortyapi.com/api/character/?page=${pageNum}`)
-        .then(res => dispatch(addPage({ [pageNum]: res.data.results })))
-        .then(() => setLoading(false)), 500)
+      dispatch(setPage(pageNum))
     }
   }
 
   return (
   <>
-  { loading
+  { loader
     ? <Loader />
     : <ListCards pages={currentPages} />
     }
@@ -55,7 +44,7 @@ const Pagination = () => {
       pageRangeDisplayed={4}
       marginPagesDisplayed={2}
       onPageChange={ target => chosenPage(target.selected + 1) }
-      className={ loading ? 'disable-component' : 'pagination' }
+      className={ loader ? 'disable-component' : 'pagination' }
       pageClassName='btn'
       pageLinkClassName='btn'
       nextLinkClassName='btn btn-next'
