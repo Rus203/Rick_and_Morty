@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  react-app:
+    container_name: react-test
+    build: ./
+    ports:
+      - 8000:3000
